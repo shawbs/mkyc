@@ -1,0 +1,333 @@
+@charset "UTF-8";
+@import "variables","mixins";
+
+html,body{
+	overflow: hidden;
+	font-size: $baseFontSize;
+	font-family: $baseFontFamily;
+}
+.player{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background-color: $white;
+	border:3px solid $red;
+	@include border-radius(50%);
+	z-index: 1;
+	.audio{
+		background-image: url("../images/music_disc.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 50px 50px;
+		width: 50px;
+		height: 50px;
+		@include border-radius(50%);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin:auto;
+		&.run{
+			animation:audio 3s linear infinite;
+		}
+	}
+	.audio-btn{
+		background-image: url("../images/music_pointer.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 20px 36px;
+		width: 20px;
+		height: 36px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	@keyframes audio{
+		0%{
+			@include transform(rotate(0deg));
+		}
+		100%{
+			@include transform(rotate(360deg));
+		}
+	}
+}
+.page{
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+}
+// pageOne
+.pageOne{
+	display: block;
+	background-image: url("../images/p1_bg.jpg");
+}
+.lantern{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin:auto;
+	width: 160px;
+	height: 500px;
+	background-image: url("../images/p1_lantern.png");
+	background-repeat: no-repeat;
+	background-position: center top; 
+	background-size: 160px 530px;
+	z-index: 1;
+	.lantern-redhot{
+		height: 160px;
+		width: 130px;
+		background-color: lighten($red,10%);
+		@include border-radius(50%); 
+		@include box-shadow(0 0 20px 12px lighten($red,10%));
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		animation: redhot 0.5s linear alternate  infinite;
+	}
+	@keyframes redhot{
+		0%{
+			@include transform(scale(1,1));
+		}
+		100%{
+			@include transform(scale(1.2,1.2));
+		}
+	}
+	.lantern-text{
+		text-align: center;
+		color: white;
+		height: 50px;
+		font-size: 1.4rem;
+		line-height: 1.5em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+}
+.footer{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 130px;
+	.fd-imooc-logo{
+		width: 177px;
+		height: 212px;
+		background-image: url("../images/p1_imooc.png");
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 50px 80px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	.copyright{
+		position: relative;
+		top: 80px;
+		text-align: center;
+	}
+}
+
+//pageTwo
+.pageTwo{
+	display: none;
+	background-image: url("../images/p2_bg.jpg");
+	bottom: 0;
+	@include transition(bottom .6s);
+	.bg-blur{
+		width: 100%;
+		height: 100%;
+		background-color: #f2f2f2;
+		animation: blur 1s linear forwards;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		@keyframes blur{
+			0%{
+				opacity: 1;
+			}
+			100%{
+				opacity: 0;
+			}
+		}
+	}
+	.circle-outer{
+		width: 150px;
+		height: 150px;
+		background-image: url("../images/p2_circle_outer.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 150px 150px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		z-index: 1;
+		animation: outer 1s linear infinite;
+		animation-delay: 1s;
+	}
+	.cricle-middle{
+		width: 120px;
+		height: 120px;
+		background-image: url("../images/p2_circle_middle.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 120px 120px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		animation: middle .5s linear infinite;
+		animation-delay: .5s;
+	}
+	.cricle-inner{
+		width: 100px;
+		height: 100px;
+		background-image: url("../images/p2_circle_inner.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100px 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		animation: inner .5s linear infinite;
+	}
+	.p2-2016{
+		width: 80px;
+		height: 26px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	@keyframes outer{
+		0%{
+			@include transform(rotate(0deg));
+		}
+		100%{
+			@include transform(rotate(-360deg));
+		}
+	}
+	@keyframes middle{
+		0%{
+			@include transform(rotate(0deg));
+		}
+		100%{
+			@include transform(rotate(1080deg));
+		}
+	}
+	@keyframes inner{
+		0%{
+			@include transform(rotate(0deg));
+		}
+		100%{
+			@include transform(rotate(-360deg));
+		}
+	}
+}
+.pageThree{
+	display: none;
+	background-image: url("../images/p3_bg.jpg");
+	bottom: -100%;
+	@include transition(bottom .6s);
+	.imooc-logo{
+		width: 120px;
+		height: 50px;
+		background-image: url("../images/p3_logo.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 120px 50px;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.title{
+		width: 40vw;
+		height: 50vh;
+		background-image: url("../images/p3_title.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 40vw 50vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.couplet-next{
+		width: 40vw;
+		height: 50vh;
+		background-image: url("../images/p3_couplet_second.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 20vw 40vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 66vw;
+		bottom: 0;
+		margin: auto;
+	}
+	.couplet-prev{
+		width: 40vw;
+		height: 50vh;
+		background-image: url("../images/p3_couplet_first.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 20vw 40vh;
+		position: absolute;
+		top: 0;
+		left: 66vw;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.blessing{
+		width: 100px;
+		height: 100px;
+		background-image: url("../images/p3_blessing.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100px 100px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 50px;
+		margin: auto;
+		animation: blessing 2s linear infinite;
+	}
+	@keyframes blessing{
+		0%{
+			@include transform(rotate(0deg));
+		}
+		100%{
+			@include transform(rotate(360deg));
+		}
+	}
+}

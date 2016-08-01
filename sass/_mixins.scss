@@ -1,0 +1,98 @@
+
+//border
+@mixin border($position,$width,$color){
+  border-#{$position}:$width solid $color;
+}
+//border-radius
+@mixin border-radius($radius:5px){
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+//box-shadow
+@mixin box-shadow($shadow:0 0 5px $gray){
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+}
+//transform
+@mixin transform($arg){
+  transform:$arg;
+  -webkit-transform:$arg;
+  -moz-transform:$arg;
+}
+//transition
+@mixin transition($arg...){
+  transition:$arg;
+  -webkit-transition:$arg;
+  -moz-transition:$arg;
+}
+
+//linearGradient
+@mixin linearGradient($direct,$startColor,$endColor){
+  background: linear-gradient(to $direct,$startColor,$endColor);
+  @if $direct==bottom or $direct==top{
+    $direct:0;
+  }@else{
+    $direct:1
+  }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=#{$direct} ) ;
+}
+//opacity
+@mixin opacity($opacity:0.8){
+  opacity: $opacity;
+  filter: alpha(opacity=#{$opacity*100});
+}
+//rgba
+@mixin rgba($numA,$numB,$numC,$opacity,$ieColor,$ieOpacity){
+  background-color:rgba($numA,$numB,$numC,$opacity);
+  $str:$ieOpacity+$ieColor;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$str},endColorstr=#{$str});
+}
+
+//function
+@mixin blockOrHidden($boolean:true){
+  @if $boolean {
+    display: block;
+  }@else {
+    display: none;
+  }
+}
+
+//colorBar
+// Darken mixin
+@mixin swatchesDarken($color) {
+  @for $i from 1 through 10 {
+    $x:$i+11;
+    li:nth-child(#{$x}) {
+      $n:$i*5;
+      $bgc:darken($color,$n); //
+      background-color: $bgc;
+      &:hover:before { //
+        content: "#{$bgc}";
+        color: lighten($bgc,40);
+        font-family: $baseFontFamily;
+        font-size: 8px;
+        padding: 2px;
+      }
+    }
+  }
+}
+// Lighten mixin
+@mixin swatchesLighten($color) {
+  @for $i from 1 through 10 {
+    $x:11-$i;
+    li:nth-child(#{$x}) {
+      $n:$i*5;
+      $bgc:lighten($color,$n);
+      background-color: $bgc;
+      &:hover:before {
+        content: "#{$bgc}";
+        color: darken($bgc,40);
+        font-family: $baseFontFamily;
+        font-size: 8px;
+        padding: 2px;
+      }
+    }
+  }
+}

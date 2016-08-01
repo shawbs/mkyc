@@ -1,0 +1,157 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+q, blockquote {
+    quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    /*content: none;*/
+}
+em,i{
+    font-style: normal;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/*public css*/
+
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.mrgT10{
+    margin-top: 10px;
+}
+.mrgT20{
+    margin-top: 20px;
+}
+.mrgB10{
+    margin-bottom: 10px;
+}
+.mrgB20{
+    margin-bottom: 20px;
+}
+.mrgL10{
+    margin-left: 10px;
+}
+.mrgL20{
+    margin-left: 20px;
+}
+.mrgR10{
+    margin-right: 10px;
+}
+.mrgR20{
+    margin-right: 20px;
+}
+
+.pdT10{
+    padding-top: 10px;
+}
+.pdT20{
+    padding-top: 20px;
+}
+.pdB10{
+    padding-bottom: 10px;
+}
+.pdB20{
+    padding-bottom: 20px;
+}
+.pdL10{
+    padding-left: 10px;
+}
+.pdL20{
+    padding-left: 20px;
+}
+.pdR10{
+    padding-right: 10px;
+}
+.pdR20{
+    padding-right: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited,a:link,a:active,a:focus,input:active,img:active,button:focus,select:focus {
+    outline: none;
+}
+
+/*media query*/
+/*@media (min-width: 1200px){
+    .container{
+        width: 1170px
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .container{
+        width: 970px;
+    }
+}
+@media (max-width: 992px){
+    .container{
+        width: 750px;
+    }
+}*/

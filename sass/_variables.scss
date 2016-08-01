@@ -1,0 +1,41 @@
+//base
+$baseFontFamily:"Helvetica Neue",Arial,"Microsoft YaHei",sans-serif !default;
+$baseFontSize:10px !default;
+$baseLineHeight:1.5em !default;
+$baseColor:#252525 !default;
+$basePix:10px 20px 30px !default;
+$normal:#337ab7 !default;
+$hover:#252525  !default;// a:hover
+$BGColor:#ffffff #f2f2f2 !default;//main body
+
+//color
+$gray:#cccccc;
+$black:#000000;
+$white:#ffffff;
+$blue:blue;
+$red:red;
+
+//btn
+$btn:(
+  default:$gray,
+  primary:lighten($blue,20%)
+);
+
+//colorBar
+$redBase: #DC143C;
+$orangeBase: saturate(lighten(adjust_hue($redBase, 39), 5), 7);//#f37a16
+$yellowBase: saturate(lighten(adjust_hue($redBase, 64), 6), 13);//#fbdc14
+$greenBase: desaturate(darken(adjust_hue($redBase, 102), 2), 11);//#73c620
+$blueBase: saturate(darken(adjust_hue($redBase, 201), 2), 1);//#12b7d4
+$purpleBase: saturate(darken(adjust_hue($redBase, 296), 2), 1);//#a012d4
+$blackBase: #777;
+
+
+// define mixins
+@mixin rgba($numA,$numB,$numC,$opacity,$ieColor,$ieOpacity){
+  background-color:rgba($numA,$numB,$numC,$opacity);
+  $str:$ieOpacity+$ieColor;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$str},endColorstr=#{$str});
+}
+
+
