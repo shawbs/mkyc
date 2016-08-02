@@ -8,10 +8,10 @@ html,body{
 }
 .player{
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 60px;
-	height: 60px;
+	top: 5.55vw;
+	right: 5.55vw;
+	width: 15vw;
+	height: 15vw;
 	background-color: $white;
 	border:3px solid $red;
 	@include border-radius(50%);
@@ -20,9 +20,9 @@ html,body{
 		background-image: url("../images/music_disc.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 50px 50px;
-		width: 50px;
-		height: 50px;
+		background-size: 13.88vw 13.88vw;
+		width: 13.88vw;
+		height: 13.88vw;
 		@include border-radius(50%);
 		position: absolute;
 		top: 0;
@@ -38,9 +38,9 @@ html,body{
 		background-image: url("../images/music_pointer.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 20px 36px;
-		width: 20px;
-		height: 36px;
+		background-size: 5.55vw 11.11vw;
+		width: 5.55vw;
+		height: 5.55vw;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -58,6 +58,7 @@ html,body{
 	position: absolute;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 100vw 100vh;
 	width: 100%;
 	height: 100%;
 }
@@ -72,39 +73,43 @@ html,body{
 	left: 0;
 	right: 0;
 	margin:auto;
-	width: 160px;
-	height: 500px;
+	width: 44.44vw;
+	height: 78.12vh;
 	background-image: url("../images/p1_lantern.png");
 	background-repeat: no-repeat;
 	background-position: center top; 
-	background-size: 160px 530px;
+	background-size: 44.44vw 82.81vh;
 	z-index: 1;
-	.lantern-redhot{
-		height: 160px;
-		width: 130px;
-		background-color: lighten($red,10%);
+	.redhot{
+		content: "";
+		height: 25vh;
+		width: 36.25vw;
+		background-color: lighten($red,20%);
 		@include border-radius(50%); 
-		@include box-shadow(0 0 20px 12px lighten($red,10%));
+		@include box-shadow(0 0 6.25vw 3.75vw lighten($red,20%));
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		margin: auto;
+		z-index: -1;
 		animation: redhot 0.5s linear alternate  infinite;
 	}
 	@keyframes redhot{
 		0%{
+			@include opacity(0.8);
 			@include transform(scale(1,1));
 		}
 		100%{
-			@include transform(scale(1.2,1.2));
+			@include opacity(1);
+			@include transform(scale(1.1,1.1));
 		}
 	}
 	.lantern-text{
 		text-align: center;
 		color: white;
-		height: 50px;
+		height: 7.8vh;
 		font-size: 1.4rem;
 		line-height: 1.5em;
 		position: absolute;
@@ -120,14 +125,14 @@ html,body{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 130px;
+	height: 20.31vh;
 	.fd-imooc-logo{
-		width: 177px;
-		height: 212px;
+		width: 13.88vw;
+		height: 12.5vh;
 		background-image: url("../images/p1_imooc.png");
 		background-repeat: no-repeat;
 		background-position: center top;
-		background-size: 50px 80px;
+		background-size: 13.88vw 12.5vh;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -136,7 +141,7 @@ html,body{
 	}
 	.copyright{
 		position: relative;
-		top: 80px;
+		top: 12.5vh;
 		text-align: center;
 	}
 }
@@ -166,12 +171,12 @@ html,body{
 		}
 	}
 	.circle-outer{
-		width: 150px;
-		height: 150px;
+		width: 41.66vw;
+		height: 41.66vw;
 		background-image: url("../images/p2_circle_outer.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 150px 150px;
+		background-size: 41.66vw 41.66vw;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -183,12 +188,12 @@ html,body{
 		animation-delay: 1s;
 	}
 	.cricle-middle{
-		width: 120px;
-		height: 120px;
+		width: 33.33vw;
+		height: 33.33vw;
 		background-image: url("../images/p2_circle_middle.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 120px 120px;
+		background-size: 33.33vw 33.33vw;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -199,12 +204,12 @@ html,body{
 		animation-delay: .5s;
 	}
 	.cricle-inner{
-		width: 100px;
-		height: 100px;
+		width: 27.77vw;
+		height: 27.77vw;
 		background-image: url("../images/p2_circle_inner.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 100px 100px;
+		background-size: 27.77vw 27.77vw;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -214,8 +219,8 @@ html,body{
 		animation: inner .5s linear infinite;
 	}
 	.p2-2016{
-		width: 80px;
-		height: 26px;
+		width: 22.22vw;
+		height: 4.06vh;
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -254,14 +259,14 @@ html,body{
 	bottom: -100%;
 	@include transition(bottom .6s);
 	.imooc-logo{
-		width: 120px;
-		height: 50px;
+		width: 33.33vw;
+		height: 7.81vh;
 		background-image: url("../images/p3_logo.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 120px 50px;
+		background-size: 33.33vw 7.81vh;
 		position: absolute;
-		top: 50px;
+		top: 7.81vh;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -309,16 +314,16 @@ html,body{
 		margin: auto;
 	}
 	.blessing{
-		width: 100px;
-		height: 100px;
+		width: 27.77vw;
+		height: 27.77vw;
 		background-image: url("../images/p3_blessing.png");
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: 100px 100px;
+		background-size: 27.77vw 27.77vw;
 		position: absolute;
 		left: 0;
 		right: 0;
-		bottom: 50px;
+		bottom: 7.5vh;
 		margin: auto;
 		animation: blessing 2s linear infinite;
 	}
